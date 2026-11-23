@@ -1,0 +1,2815 @@
+
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ENCABEZADO */
+
+header {
+    background: #101010;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span,
+footer span {
+    color: #e50914;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: #cccccc;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+
+    background:
+    linear-gradient(90deg, #000000 10%, transparent 100%),
+    url("Fondo.jpg") center/cover no-repeat;
+}
+
+.portada-texto {
+    max-width: 700px;
+}
+
+.etiqueta {
+    color: #e50914;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.portada h1 {
+    font-size: clamp(40px, 6vw, 75px);
+    margin: 20px 0;
+    line-height: 1;
+}
+
+.portada p {
+    color: #cccccc;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    background: #e50914;
+    padding: 13px 22px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 5px;
+    border: 1px solid #e50914;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: transparent;
+}
+
+.boton-secundario {
+    background: transparent;
+    border-color: white;
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 65px 8%;
+}
+
+.seccion h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    color: #aaaaaa;
+    margin-bottom: 30px;
+}
+
+.fondo {
+    background: #191919;
+}
+
+.fondo h2 {
+    margin-bottom: 30px;
+}
+
+/* VIDEO */
+
+.video-principal {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: center;
+    background: #1c1c1c;
+    padding: 20px;
+}
+
+.video-principal iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.video-principal h3 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.video-principal p {
+    color: #bbbbbb;
+    line-height: 1.6;
+}
+
+/* GALERÍA */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tarjeta {
+    background: #222;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.tarjeta h3 {
+    color: #e50914;
+    padding: 15px 15px 5px;
+}
+
+.tarjeta p {
+    color: #bbbbbb;
+    padding: 0 15px 20px;
+    font-size: 14px;
+}
+
+/* SOBRE NOSOTROS */
+
+.nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.nosotros p {
+    color: #bbbbbb;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.nosotros img {
+    width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    background: #080808;
+    text-align: center;
+    padding: 45px 20px;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    color: #999999;
+    margin-top: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-principal,
+    .nosotros {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .portada {
+        min-height: 450px;
+    }
+
+    .seccion {
+        padding: 45px 5%;
+    }
+}
+
+.logo img {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+
+/* ==================================
+   SECCIÓN DE PELÍCULAS
+================================== */
+
+.activo {
+    color: #e50914 !important;
+}
+
+.portada-seccion {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(90deg, #111111 5%, rgba(17,17,17,0.85) 50%, rgba(17,17,17,0.25)),
+        url("peliculas-fondo.jpg") center/cover no-repeat;
+}
+
+.contenido-portada {
+    max-width: 650px;
+}
+
+.etiqueta {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.contenido-portada h1 {
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+.contenido-portada p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 540px;
+}
+
+.introduccion {
+    text-align: center;
+    padding: 75px 10%;
+}
+
+.introduccion h2 {
+    font-size: 34px;
+    margin: 15px 0;
+}
+
+.introduccion p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: auto;
+}
+
+.pelicula-destacada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    padding: 40px 8% 80px;
+}
+
+.imagen-destacada img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.texto-destacado h2 {
+    font-size: 35px;
+    margin: 18px 0;
+}
+
+.texto-destacado p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.boton {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 13px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: white;
+    color: #111111;
+}
+
+.catalogo {
+    padding: 60px 8%;
+    background: #171717;
+}
+
+.titulo-seccion {
+    margin-bottom: 35px;
+}
+
+.titulo-seccion h2 {
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.titulo-seccion p {
+    color: #aaaaaa;
+}
+
+.rejilla-peliculas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-pelicula {
+    background: #222222;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.tarjeta-pelicula:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta-pelicula img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion-pelicula {
+    padding: 22px;
+}
+
+.informacion-pelicula span {
+    color: #e50914;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.informacion-pelicula h3 {
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.informacion-pelicula p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.informacion-pelicula a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.informacion-pelicula a:hover {
+    color: #e50914;
+}
+
+.video-seccion {
+    text-align: center;
+    padding: 75px 8%;
+}
+
+.video-seccion h2 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.video-seccion p {
+    color: #aaaaaa;
+    margin-bottom: 30px;
+}
+
+.contenedor-video {
+    max-width: 850px;
+    margin: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.contenedor-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.pie-pagina {
+    background: #080808;
+    padding: 45px 8%;
+    text-align: center;
+}
+
+.pie-pagina p {
+    color: #aaaaaa;
+    margin-top: 15px;
+}
+
+.pie-pagina .copyright {
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+@media (max-width: 850px) {
+    .rejilla-peliculas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pelicula-destacada {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .rejilla-peliculas {
+        grid-template-columns: 1fr;
+    }
+
+    .portada-seccion {
+        min-height: 400px;
+        padding: 50px 7%;
+    }
+
+    .introduccion h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* ========================================
+   SECCIÓN DE SERIES
+======================================== */
+
+/* PORTADA */
+
+.portada-series {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.3)
+        ),
+        url("imagenes/series-fondo.jpg")
+        center/cover no-repeat;
+}
+
+.contenido-portada-series {
+    max-width: 650px;
+}
+
+.etiqueta-series {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.contenido-portada-series h1 {
+    color: white;
+    font-size: clamp(36px, 5vw, 65px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contenido-portada-series p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* BOTONES */
+
+.boton-series {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton-series:hover {
+    background: white;
+    color: #111111;
+}
+
+
+/* INTRODUCCIÓN */
+
+.introduccion-series {
+    padding: 80px 10%;
+    text-align: center;
+    background: #111111;
+}
+
+.introduccion-series h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.introduccion-series p {
+    color: #aaaaaa;
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* SERIE DESTACADA */
+
+.serie-destacada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    padding: 70px 8%;
+    background: #171717;
+}
+
+.imagen-serie-destacada img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-serie-destacada h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.texto-serie-destacada p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* CATÁLOGO */
+
+.catalogo-series {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.titulo-catalogo-series {
+    margin-bottom: 40px;
+}
+
+.titulo-catalogo-series h2 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-catalogo-series p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+.rejilla-series {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* TARJETAS */
+
+.tarjeta-serie {
+    background: #222222;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.tarjeta-serie:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta-serie img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion-serie {
+    padding: 22px;
+}
+
+.informacion-serie span {
+    color: #e50914;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.informacion-serie h3 {
+    color: white;
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+.informacion-serie p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.informacion-serie a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.informacion-serie a:hover {
+    color: #e50914;
+}
+
+
+/* ANÁLISIS DE PERSONAJES */
+
+.analisis-series {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #1b1b1b;
+}
+
+.contenido-analisis-series h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.contenido-analisis-series p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.imagen-analisis-series img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* VIDEO DE YOUTUBE */
+
+.video-series {
+    padding: 80px 8%;
+    text-align: center;
+    background: #111111;
+}
+
+.video-series h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.video-series p {
+    color: #aaaaaa;
+    margin-bottom: 35px;
+}
+
+.contenedor-video-series {
+    max-width: 850px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+}
+
+.contenedor-video-series iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* NAVEGACIÓN ACTIVA */
+
+.navegacion .activo {
+    color: #e50914;
+}
+
+
+/* ADAPTACIÓN PARA TABLETS */
+
+@media (max-width: 900px) {
+
+    .rejilla-series {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .serie-destacada,
+    .analisis-series {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .portada-series {
+        min-height: 400px;
+        padding: 50px 7%;
+    }
+
+    .rejilla-series {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo-series,
+    .video-series,
+    .introduccion-series {
+        padding: 55px 7%;
+    }
+
+    .serie-destacada,
+    .analisis-series {
+        padding: 55px 7%;
+    }
+
+    .introduccion-series h2,
+    .titulo-catalogo-series h2,
+    .video-series h2 {
+        font-size: 28px;
+    }
+
+    .imagen-serie-destacada img,
+    .imagen-analisis-series img {
+        height: auto;
+    }
+
+}
+
+
+/* ======================================
+   SECCIÓN DE SUPERHÉROES
+====================================== */
+
+/* PORTADA */
+
+.portada-superheroes {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.3)
+        ),
+        url("imagenes/superheroes-fondo.jpg")
+        center/cover no-repeat;
+}
+
+.contenido-portada-superheroes {
+    max-width: 650px;
+}
+
+.etiqueta-superheroes {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contenido-portada-superheroes h1 {
+    color: white;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contenido-portada-superheroes p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* BOTONES */
+
+.boton-superheroes {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 27px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-superheroes:hover {
+    background: white;
+    color: #111111;
+}
+
+
+/* INTRODUCCIÓN */
+
+.introduccion-superheroes {
+    padding: 80px 10%;
+    text-align: center;
+    background: #111111;
+}
+
+.introduccion-superheroes h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.introduccion-superheroes p {
+    color: #aaaaaa;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* UNIVERSOS MARVEL Y DC */
+
+.universos-superheroes {
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.titulo-superheroes {
+    margin-bottom: 40px;
+}
+
+.titulo-superheroes h2 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-superheroes p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+.rejilla-universos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tarjeta-universo {
+    background: #222222;
+    overflow: hidden;
+}
+
+.tarjeta-universo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion-universo {
+    padding: 30px;
+}
+
+.informacion-universo h3 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.informacion-universo p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* CAMINO HACIA DOOMSDAY */
+
+.doomsday-superheroes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.imagen-doomsday img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.contenido-doomsday h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.contenido-doomsday p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* CATÁLOGOS MARVEL Y DC */
+
+.catalogo-superheroes {
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.dc-seccion {
+    background: #111111;
+}
+
+.rejilla-contenido-superheroes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* TARJETAS DE CONTENIDO */
+
+.tarjeta-contenido-superheroes {
+    background: #222222;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.tarjeta-contenido-superheroes:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta-contenido-superheroes img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion-contenido-superheroes {
+    padding: 22px;
+}
+
+.informacion-contenido-superheroes span {
+    color: #e50914;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.informacion-contenido-superheroes h3 {
+    color: white;
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.informacion-contenido-superheroes p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.informacion-contenido-superheroes a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.informacion-contenido-superheroes a:hover {
+    color: #e50914;
+}
+
+
+/* TEORÍAS Y ANÁLISIS */
+
+.teorias-superheroes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #1b1b1b;
+}
+
+.contenido-teorias h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.contenido-teorias p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.imagen-teorias img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* VIDEO DE YOUTUBE */
+
+.video-superheroes {
+    padding: 80px 8%;
+    text-align: center;
+    background: #111111;
+}
+
+.video-superheroes h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.video-superheroes p {
+    color: #aaaaaa;
+    margin-bottom: 35px;
+}
+
+.contenedor-video-superheroes {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+}
+
+.contenedor-video-superheroes iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* ADAPTACIÓN PARA TABLETS */
+
+@media (max-width: 900px) {
+
+    .rejilla-contenido-superheroes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .doomsday-superheroes,
+    .teorias-superheroes {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .portada-superheroes {
+        min-height: 400px;
+        padding: 55px 7%;
+    }
+
+    .rejilla-universos,
+    .rejilla-contenido-superheroes {
+        grid-template-columns: 1fr;
+    }
+
+    .universos-superheroes,
+    .catalogo-superheroes,
+    .introduccion-superheroes,
+    .video-superheroes,
+    .doomsday-superheroes,
+    .teorias-superheroes {
+        padding: 55px 7%;
+    }
+
+    .titulo-superheroes h2,
+    .introduccion-superheroes h2,
+    .video-superheroes h2 {
+        font-size: 28px;
+    }
+
+    .imagen-doomsday img,
+    .imagen-teorias img {
+        height: auto;
+    }
+
+}
+
+
+/* ======================================
+   SECCIÓN NOSTALGIA
+====================================== */
+
+/* PORTADA */
+
+.portada-nostalgia {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.3)
+        ),
+        url("imagenes/nostalgia-fondo.jpg")
+        center/cover no-repeat;
+}
+
+.contenido-portada-nostalgia {
+    max-width: 700px;
+}
+
+.etiqueta-nostalgia {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contenido-portada-nostalgia h1 {
+    color: white;
+    font-size: clamp(36px, 5vw, 66px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contenido-portada-nostalgia p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* BOTONES */
+
+.boton-nostalgia {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-nostalgia:hover {
+    background: white;
+    color: #111111;
+}
+
+
+/* INTRODUCCIÓN */
+
+.introduccion-nostalgia {
+    padding: 80px 10%;
+    text-align: center;
+    background: #111111;
+}
+
+.introduccion-nostalgia h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.introduccion-nostalgia p {
+    color: #aaaaaa;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* CONTENIDO DESTACADO */
+
+.destacado-nostalgia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.imagen-destacado-nostalgia img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-destacado-nostalgia h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.texto-destacado-nostalgia p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* CATÁLOGO */
+
+.catalogo-nostalgia {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.titulo-nostalgia {
+    margin-bottom: 40px;
+}
+
+.titulo-nostalgia h2 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-nostalgia p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+.rejilla-nostalgia {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* TARJETAS */
+
+.tarjeta-nostalgia {
+    background: #222222;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.tarjeta-nostalgia:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta-nostalgia img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion-nostalgia {
+    padding: 22px;
+}
+
+.informacion-nostalgia span {
+    color: #e50914;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.informacion-nostalgia h3 {
+    color: white;
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.informacion-nostalgia p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.informacion-nostalgia a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.informacion-nostalgia a:hover {
+    color: #e50914;
+}
+
+
+/* ANTES Y AHORA */
+
+.antes-ahora-nostalgia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #1b1b1b;
+}
+
+.contenido-antes-ahora h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.contenido-antes-ahora p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.imagen-antes-ahora img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* CATEGORÍAS */
+
+.categorias-nostalgia {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.rejilla-categorias-nostalgia {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.categoria-nostalgia {
+    display: block;
+    background: #222222;
+    padding: 35px 25px;
+    text-decoration: none;
+    border-top: 3px solid #e50914;
+    transition: 0.3s;
+}
+
+.categoria-nostalgia:hover {
+    background: #303030;
+    transform: translateY(-5px);
+}
+
+.categoria-nostalgia h3 {
+    color: white;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.categoria-nostalgia p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* VIDEO */
+
+.video-nostalgia {
+    padding: 80px 8%;
+    text-align: center;
+    background: #171717;
+}
+
+.video-nostalgia h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.video-nostalgia p {
+    color: #aaaaaa;
+    margin-bottom: 35px;
+}
+
+.contenedor-video-nostalgia {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+}
+
+.contenedor-video-nostalgia iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 900px) {
+
+    .rejilla-nostalgia,
+    .rejilla-categorias-nostalgia {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destacado-nostalgia,
+    .antes-ahora-nostalgia {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* RESPONSIVE CELULAR */
+
+@media (max-width: 600px) {
+
+    .portada-nostalgia {
+        min-height: 400px;
+        padding: 55px 7%;
+    }
+
+    .rejilla-nostalgia,
+    .rejilla-categorias-nostalgia {
+        grid-template-columns: 1fr;
+    }
+
+    .introduccion-nostalgia,
+    .destacado-nostalgia,
+    .catalogo-nostalgia,
+    .antes-ahora-nostalgia,
+    .categorias-nostalgia,
+    .video-nostalgia {
+        padding: 55px 7%;
+    }
+
+    .introduccion-nostalgia h2,
+    .titulo-nostalgia h2,
+    .video-nostalgia h2 {
+        font-size: 28px;
+    }
+
+    .imagen-destacado-nostalgia img,
+    .imagen-antes-ahora img {
+        height: auto;
+    }
+
+}
+
+
+/* ======================================
+   SECCIÓN TOPS Y RANKINGS
+====================================== */
+
+/* PORTADA */
+
+.portada-tops {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.3)
+        ),
+        url("imagenes/tops-fondo.jpg")
+        center/cover no-repeat;
+}
+
+.contenido-portada-tops {
+    max-width: 650px;
+}
+
+.etiqueta-tops {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contenido-portada-tops h1 {
+    color: white;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contenido-portada-tops p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* BOTONES */
+
+.boton-tops {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-tops:hover {
+    background: white;
+    color: #111111;
+}
+
+
+/* INTRODUCCIÓN */
+
+.introduccion-tops {
+    padding: 80px 10%;
+    text-align: center;
+    background: #111111;
+}
+
+.introduccion-tops h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.introduccion-tops p {
+    color: #aaaaaa;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* TOP DESTACADO */
+
+.destacado-tops {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.imagen-destacado-tops img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-destacado-tops h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.texto-destacado-tops p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* CATEGORÍAS */
+
+.categorias-tops {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.titulo-tops {
+    margin-bottom: 40px;
+}
+
+.titulo-tops h2 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-tops p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+.rejilla-categorias-tops {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.categoria-top {
+    display: block;
+    background: #222222;
+    padding: 30px 22px;
+    text-decoration: none;
+    border-top: 3px solid #e50914;
+    transition: 0.3s;
+}
+
+.categoria-top:hover {
+    background: #303030;
+    transform: translateY(-5px);
+}
+
+.categoria-top span {
+    color: #e50914;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.categoria-top h3 {
+    color: white;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.categoria-top p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* CATÁLOGO */
+
+.catalogo-tops {
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.rejilla-tops {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* TARJETAS */
+
+.tarjeta-top {
+    background: #222222;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.tarjeta-top:hover {
+    transform: translateY(-7px);
+}
+
+.imagen-top {
+    position: relative;
+}
+
+.imagen-top img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.numero-top {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #e50914;
+    color: white;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.informacion-top {
+    padding: 22px;
+}
+
+.informacion-top span {
+    color: #e50914;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.informacion-top h3 {
+    color: white;
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.informacion-top p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.informacion-top a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.informacion-top a:hover {
+    color: #e50914;
+}
+
+
+/* TOP 3 PERSONAL */
+
+.podio-tops {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.rejilla-podio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.puesto-top {
+    background: #222222;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.numero-puesto {
+    color: #e50914;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.puesto-top img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.puesto-top h3 {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+
+.puesto-top p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+
+/* OPINIÓN */
+
+.opinion-tops {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #1b1b1b;
+}
+
+.contenido-opinion-tops h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.contenido-opinion-tops p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.imagen-opinion-tops img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* VIDEO */
+
+.video-tops {
+    padding: 80px 8%;
+    text-align: center;
+    background: #111111;
+}
+
+.video-tops h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.video-tops p {
+    color: #aaaaaa;
+    margin-bottom: 35px;
+}
+
+.contenedor-video-tops {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+}
+
+.contenedor-video-tops iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    .rejilla-categorias-tops {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rejilla-tops,
+    .rejilla-podio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destacado-tops,
+    .opinion-tops {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .portada-tops {
+        min-height: 400px;
+        padding: 55px 7%;
+    }
+
+    .rejilla-categorias-tops,
+    .rejilla-tops,
+    .rejilla-podio {
+        grid-template-columns: 1fr;
+    }
+
+    .introduccion-tops,
+    .destacado-tops,
+    .categorias-tops,
+    .catalogo-tops,
+    .podio-tops,
+    .opinion-tops,
+    .video-tops {
+        padding: 55px 7%;
+    }
+
+    .introduccion-tops h2,
+    .titulo-tops h2,
+    .video-tops h2 {
+        font-size: 28px;
+    }
+
+    .imagen-destacado-tops img,
+    .imagen-opinion-tops img {
+        height: auto;
+    }
+
+}
+
+
+/* ======================================
+   SECCIÓN LETTERBOXD
+====================================== */
+
+/* PORTADA */
+
+.portada-letterboxd {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.3)
+        ),
+        url("imagenes/letterboxd-fondo.jpg")
+        center/cover no-repeat;
+}
+
+.contenido-portada-letterboxd {
+    max-width: 650px;
+}
+
+.etiqueta-letterboxd {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contenido-portada-letterboxd h1 {
+    color: white;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contenido-portada-letterboxd p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* BOTONES */
+
+.boton-letterboxd {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-letterboxd:hover {
+    background: white;
+    color: #111111;
+}
+
+
+/* INTRODUCCIÓN */
+
+.introduccion-letterboxd {
+    padding: 80px 10%;
+    text-align: center;
+    background: #111111;
+}
+
+.introduccion-letterboxd h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.introduccion-letterboxd p {
+    color: #aaaaaa;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* PERFIL */
+
+.perfil-letterboxd {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.imagen-perfil-letterboxd img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.informacion-perfil-letterboxd h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.informacion-perfil-letterboxd p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* CUATRO FAVORITAS */
+
+.favoritas-letterboxd {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.titulo-letterboxd {
+    margin-bottom: 40px;
+}
+
+.titulo-letterboxd h2 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-letterboxd p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+.rejilla-favoritas-letterboxd {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.pelicula-favorita {
+    text-align: center;
+}
+
+.pelicula-favorita img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.pelicula-favorita img:hover {
+    transform: scale(1.04);
+}
+
+.pelicula-favorita h3 {
+    color: white;
+    font-size: 18px;
+    margin: 15px 0 5px;
+}
+
+.pelicula-favorita p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+
+/* DIARIO */
+
+.diario-letterboxd {
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.rejilla-diario-letterboxd {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.tarjeta-diario {
+    background: #222222;
+    overflow: hidden;
+}
+
+.tarjeta-diario img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion-diario {
+    padding: 18px;
+}
+
+.informacion-diario h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.estrellas-letterboxd {
+    color: #00c030;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.informacion-diario p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+
+/* RESEÑAS */
+
+.resenas-letterboxd {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.rejilla-resenas-letterboxd {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tarjeta-resena-letterboxd {
+    background: #222222;
+    overflow: hidden;
+}
+
+.tarjeta-resena-letterboxd img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.texto-resena-letterboxd {
+    padding: 25px;
+}
+
+.texto-resena-letterboxd h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.texto-resena-letterboxd p {
+    color: #aaaaaa;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.texto-resena-letterboxd a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.texto-resena-letterboxd a:hover {
+    color: #e50914;
+}
+
+
+/* REFLEXIÓN */
+
+.reflexion-letterboxd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #1b1b1b;
+}
+
+.contenido-reflexion-letterboxd h2 {
+    color: white;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.contenido-reflexion-letterboxd p {
+    color: #aaaaaa;
+    line-height: 1.8;
+}
+
+.imagen-reflexion-letterboxd img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* VISITAR LETTERBOXD */
+
+.visitar-letterboxd {
+    padding: 90px 8%;
+    text-align: center;
+    background: #111111;
+}
+
+.visitar-letterboxd h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.visitar-letterboxd p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    .rejilla-favoritas-letterboxd,
+    .rejilla-diario-letterboxd {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .perfil-letterboxd,
+    .reflexion-letterboxd {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .portada-letterboxd {
+        min-height: 400px;
+        padding: 55px 7%;
+    }
+
+    .rejilla-favoritas-letterboxd,
+    .rejilla-diario-letterboxd {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .rejilla-resenas-letterboxd {
+        grid-template-columns: 1fr;
+    }
+
+    .introduccion-letterboxd,
+    .perfil-letterboxd,
+    .favoritas-letterboxd,
+    .diario-letterboxd,
+    .resenas-letterboxd,
+    .reflexion-letterboxd,
+    .visitar-letterboxd {
+        padding: 55px 7%;
+    }
+
+    .introduccion-letterboxd h2,
+    .titulo-letterboxd h2,
+    .visitar-letterboxd h2 {
+        font-size: 28px;
+    }
+
+    .imagen-reflexion-letterboxd img {
+        height: auto;
+    }
+
+}
+
+
+/* ======================================
+   SECCIÓN SOBRE MÍ
+====================================== */
+
+/* PORTADA */
+
+.portada-sobre-mi {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.3)
+        ),
+        url("imagenes/sobre-mi-fondo.jpg")
+        center/cover no-repeat;
+}
+
+.contenido-portada-sobre-mi {
+    max-width: 650px;
+}
+
+.etiqueta-sobre-mi {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contenido-portada-sobre-mi h1 {
+    color: white;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.contenido-portada-sobre-mi p {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* BOTONES */
+
+.boton-sobre-mi {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-sobre-mi:hover {
+    background: white;
+    color: #111111;
+}
+
+
+/* PRESENTACIÓN */
+
+.presentacion-sobre-mi {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.imagen-presentacion-sobre-mi img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-presentacion-sobre-mi h2 {
+    color: white;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.texto-presentacion-sobre-mi p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* MI HISTORIA CON EL CINE */
+
+.historia-sobre-mi {
+    padding: 90px 15%;
+    text-align: center;
+    background: #171717;
+}
+
+.historia-sobre-mi h2 {
+    color: white;
+    font-size: 40px;
+    margin: 20px 0 30px;
+}
+
+.historia-sobre-mi p {
+    color: #aaaaaa;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+
+/* MI CANAL */
+
+.canal-sobre-mi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.imagen-canal-sobre-mi img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-canal-sobre-mi h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.texto-canal-sobre-mi p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* MIS GUSTOS */
+
+.gustos-sobre-mi {
+    padding: 80px 8%;
+    background: #171717;
+}
+
+.titulo-sobre-mi {
+    margin-bottom: 40px;
+}
+
+.titulo-sobre-mi h2 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-sobre-mi p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+.rejilla-gustos-sobre-mi {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.tarjeta-gusto {
+    background: #222222;
+    padding: 30px 22px;
+    border-top: 3px solid #e50914;
+    transition: transform 0.3s;
+}
+
+.tarjeta-gusto:hover {
+    transform: translateY(-6px);
+}
+
+.icono-gusto {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-gusto h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-gusto p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* PROCESO CREATIVO */
+
+.proceso-sobre-mi {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.rejilla-proceso-sobre-mi {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.paso-proceso {
+    background: #222222;
+    padding: 30px 22px;
+}
+
+.paso-proceso span {
+    color: #e50914;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.paso-proceso h3 {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0 15px;
+}
+
+.paso-proceso p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* FRASE PERSONAL */
+
+.frase-sobre-mi {
+    padding: 100px 15%;
+    text-align: center;
+    background: #1b1b1b;
+}
+
+.frase-sobre-mi blockquote {
+    color: white;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 30px 0;
+}
+
+.frase-sobre-mi p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+
+/* GALERÍA */
+
+.galeria-sobre-mi {
+    padding: 80px 8%;
+    background: #111111;
+}
+
+.rejilla-galeria-sobre-mi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.rejilla-galeria-sobre-mi img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.rejilla-galeria-sobre-mi img:hover {
+    transform: scale(1.03);
+}
+
+
+/* REDES SOCIALES */
+
+.redes-sobre-mi {
+    padding: 90px 8%;
+    text-align: center;
+    background: #171717;
+}
+
+.redes-sobre-mi h2 {
+    color: white;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.redes-sobre-mi p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.botones-redes-sobre-mi {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.boton-red-secundario {
+    display: inline-block;
+    border: 2px solid #e50914;
+    color: white;
+    padding: 12px 28px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-red-secundario:hover {
+    background: #e50914;
+}
+
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    .presentacion-sobre-mi,
+    .canal-sobre-mi {
+        grid-template-columns: 1fr;
+    }
+
+    .rejilla-gustos-sobre-mi,
+    .rejilla-proceso-sobre-mi {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rejilla-galeria-sobre-mi {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .portada-sobre-mi {
+        min-height: 400px;
+        padding: 55px 7%;
+    }
+
+    .presentacion-sobre-mi,
+    .historia-sobre-mi,
+    .canal-sobre-mi,
+    .gustos-sobre-mi,
+    .proceso-sobre-mi,
+    .frase-sobre-mi,
+    .galeria-sobre-mi,
+    .redes-sobre-mi {
+        padding: 55px 7%;
+    }
+
+    .rejilla-gustos-sobre-mi,
+    .rejilla-proceso-sobre-mi,
+    .rejilla-galeria-sobre-mi {
+        grid-template-columns: 1fr;
+    }
+
+    .texto-presentacion-sobre-mi h2,
+    .historia-sobre-mi h2,
+    .texto-canal-sobre-mi h2,
+    .titulo-sobre-mi h2,
+    .redes-sobre-mi h2 {
+        font-size: 28px;
+    }
+
+    .imagen-presentacion-sobre-mi img,
+    .imagen-canal-sobre-mi img,
+    .rejilla-galeria-sobre-mi img {
+        height: auto;
+    }
+
+}
